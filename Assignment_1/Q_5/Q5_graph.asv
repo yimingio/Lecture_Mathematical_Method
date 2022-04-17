@@ -1,0 +1,6 @@
+x=linspace(-10,10,1000);
+y=2-x.^2.*sin(x);
+plot(x,y,'Color','k');
+line([0 0],[-80 80],'color','k','LineWidth',2);
+line([-10 10],[0 0],'color','k');
+grid on;
