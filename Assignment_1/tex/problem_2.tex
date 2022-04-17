@@ -1,0 +1,206 @@
+
+\chead{Question 2} 
+
+\begin{tcolorbox}
+\textbf{Question 2} Given the quadratic equation $x^{2}+62.1 x+1=0$. Find the approximation to each of the two solutions using \textbf{4 digit rounding arithmetic} and the appropriate equations for $x_{1}$ and $x_{2}$. Comment on the actual error.
+\end{tcolorbox}
+
+\begin{solution}\ \\
+
+
+
+
+\begin{equation}
+	x^{2}+62.1 x+1=0 \label{question_1_origin}
+\end{equation}
+
+
+
+
+
+Here first list the root finding equation of quadratic equation.
+\begin{equation}
+x_{1}=\frac{-2 c}{b+\sqrt{b^{2}-4 a c}} \label{x1_root_finding_function}
+\end{equation}
+
+\begin{equation}
+x_{2}=\frac{-2 c}{b-\sqrt{b^{2}-4 a c}} \label{x2_root_finding_function}
+\end{equation}
+
+
+Here we first calculate the exact root of the equation
+\begin{equation}
+\left\{
+	\begin{aligned}
+		x_1&=-0.016107237408969\\
+		x_2&=-62.083892762597031 \label{exact_root} \\ 
+	\end{aligned}
+\right.
+\end{equation}
+
+Next use 4 digit chopping arithmetic, calculated the $b^2-4ac$
+
+\begin{equation}
+\begin{aligned}
+f l\left(b^{2}-4 a c\right) &=(62.10)^{2}-(4.000)(1.000)(1.000) \\
+&=(3852 .) \label{Q2_4}
+\end{aligned}
+\end{equation}
+
+
+
+Next calculate the $\sqrt{b^2-4ac}$ with (\ref{Q2_4})
+
+\begin{equation}
+	fl(\sqrt{b^2-4ac})=\sqrt{(3852.)}=62.07 \label{Q2_3852}
+\end{equation}
+
+Then calculate the $b+\sqrt{b^2-4ac}$,$b-\sqrt{b^2-4ac}$ with (\ref{Q2_3852})
+\begin{equation}
+\begin{array}{l}
+f l\left(b+\sqrt{b^{2}-4 a c}\right)=62.07+62.10=124.2 \\
+f l\left(b-\sqrt{b^{2}-4 a c}\right)=-62.07+62.10=0.03000 \label{Q2_sqrt}
+\end{array}
+\end{equation}
+
+Then calculate the value of $-2c$
+
+\begin{equation}
+f l(-2 c)=-(2.000)(1.000)=-2.000 \label{Q2_2c}
+\end{equation}
+
+Then calculate the $fl(x_1)$ and $fl(x_2)$ with (\ref{x1_root_finding_function}),(\ref{x2_root_finding_function}),(\ref{Q2_sqrt}),(\ref{Q2_2c})
+
+
+
+\begin{equation}
+fl (x_{1})=fl\left(\frac{-2 c}{b+\sqrt{b^{2}-4 a c}}\right)=\frac{-2.000}{124.2}=-0.01610 \label{Q2_x_1}
+\end{equation}
+
+\begin{equation}
+	fl\left(x_{2}\right)=f l\left(\frac{-2 c}{b-\sqrt{b^{2}-4 a c}}\right)=\frac{-2.000}{-0.03000}=-66.67 \label{Q2_x_2}
+\end{equation}
+
+Finally compute the actuall error of the solution by comparing (\ref{exact_root}) and (\ref{Q2_x_1}),(\ref{Q2_x_2})
+
+
+\begin{equation}
+\left\{
+	\begin{aligned}
+		x_1-x_1^*&=-0.7237 \times 10^{-5}\\
+		x_2-x_2^*&=4.576007240 \label{Q2_act_error} \\                     
+	\end{aligned}
+\right.
+\end{equation}
+
+\textbf{Comment}
+Similar with Q1, here list the relative error:
+
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\begin{tabular}{@{}lllll@{}}
+\toprule
+      & actual value        & measured value      & absolute error       & relative error       \\ \midrule
+$x_1$ & -0.0161072374089670 & -0.0161000000000000 & 7.23740896702366e-06 & 0.000449326522187755 \\
+$x_2$ & -62.0838927625910   & -66.6700000000000   & 4.58610723740897     & 0.0738695180559353   \\ \bottomrule
+\end{tabular}
+\end{table}
+
+Here it can be found that the $x_2$ has a relatively huge error, and the reason is similar with the previous problem, $b$ and $\sqrt{b^2-4ac}$ too close and subtraction produce a small difference, and the error enlarged because of the tiny division. Here we also applied the similar method in question 1 that use the different form of the root finding equation.
+
+
+\begin{equation}
+	x_{1,2}=\frac{-b \pm \sqrt{b^2-4ac}}{2a}
+\end{equation}
+
+
+
+
+
+
+
+\begin{equation*}
+\begin{array}{l}
+f l\left(-b+\sqrt{b^{2}-4 a c}\right)=62.07-62.10=-0.03000 \\
+f l\left(-b-\sqrt{b^{2}-4 a c}\right)=-62.07-62.10=-124.2 \label{Q2_sqrt}
+\end{array}
+\end{equation*}
+
+
+
+\begin{equation*}
+	fl(x_1)=-0.01500
+\end{equation*}
+
+
+\begin{equation*}
+	fl(x_2)=-62.10
+\end{equation*}
+
+And the error can be given that:
+
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\begin{tabular}{@{}lllll@{}}
+\toprule
+      & actual value        & measured value      & absolute error       & relative error       \\ \midrule
+$x_1$ & -0.0161072374089670 & -0.0150000000000000 & -0.00110723740896702 & 0.0687416085610445   \\
+$x_2$ & -62.0838927625910   & -62.1000000000000   & 0.0161072374089670   & 0.000259443096948852 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+
+Similar result with the question 1 that the different form of equation result different accuracy with different root, here it can be found that root $x_2$ got more accurate while the $x_1$ error increase. Therefore similar result could be given with question 1:
+
+
+\begin{enumerate}
+	\item We can transform the form of the equation to reduce the error of result in quadratic function to prevent the too small divisor.
+	\begin{equation*}
+		x_{1,2}=\frac{-b \pm \sqrt{b^2-4ac}}{2a}=\frac{-2 c}{b \pm \sqrt{b^{2}-4 a c}}
+	\end{equation*}
+	\item We can add the digits when the two very close number applying subtraction.
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{solution}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

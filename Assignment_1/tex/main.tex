@@ -1,0 +1,46 @@
+\documentclass[12pt,a4]{article}
+\usepackage[margin=1in]{geometry} 
+\usepackage{amsmath}
+\usepackage{tcolorbox}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{accents}
+\pagestyle{fancy}
+\usepackage{booktabs}
+\setlength{\headheight}{40pt}
+\usepackage[colorlinks=true,bookmarks=true]{hyperref}
+
+\newenvironment{solution}
+  {\renewcommand\qedsymbol{$\blacksquare$}
+  \begin{proof}[Solution]}
+  {\end{proof}}
+\renewcommand\qedsymbol{$\blacksquare$}
+
+\newcommand{\ubar}[1]{\underaccent{\bar}{#1}}
+
+\begin{document}
+
+\lhead{Guo Yiming \\PHY2009481} 
+\rhead{BSC128 \\Numerical Method \\ Assignment 1} 
+\cfoot{\thepage\ of \pageref*{LastPage}}
+\rfoot{Code Repo: \href{https://github.com/yimingio/Lecture_Numerical_Method/tree/main/Assignment_1}{Github}}
+
+
+
+
+\include{problem_1}
+\include{problem_2}
+\include{problem_3}
+\include{problem_4}
+\include{problem_5}
+
+
+
+
+\end{document}
