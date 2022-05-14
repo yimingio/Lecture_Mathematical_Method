@@ -1,12 +1,12 @@
 %% Secant Method
 % 
 %% Initialization
-
+%
 clc;
 clear;
 close all; %Clear before
 %% Add initial condition
-
+%
 tol = 1.e-5;           % Tolorence of result
 nmax = 100;             % Maximum number of iterations
 p_0 = 0.5;              % Initial Prediction value P_0
@@ -18,18 +18,16 @@ error = 10000;          % Error initialization
 %% Plot the fraph
 % About the drawing related parameters, and start the graphic diagram to draw 
 % simple pictures
+% xval = linspace(xmin,xmax,100); 
+% for i=1:100
+%     fval(i) = func(xval(i));        %Calculate function image points
+% end
+% plot(xval,fval);                    %Plot the function
+% grid on;
+% hold on;
+%% Iteration
+% 
 
-
-xval = linspace(xmin,xmax,100); 
-for i=1:100
-    fval(i) = func(xval(i));        %Calculate function image points
-end
-plot(xval,fval);                    %Plot the function
-%% 
-% Start point calculation:
-
-grid on;
-hold on;
 while (itcount <= nmax && error >=tol)                      %When the number of iterations does not overflow, the error is still too large
     itcount =itcount+1;
     p = p_1-func(p_1)*(p_1-p_0)/(func(p_1)-func(p_0));      %Iteration function of the Secant's Method
@@ -42,10 +40,10 @@ while (itcount <= nmax && error >=tol)                      %When the number of 
         p_1 = p;
     end
 end
-%% 
-% Plot the Graph 绘制图像
-
-plot(z(1:itcount),zeros(itcount,1),'rx'); % Plot the point with the dataset
+%% Plot the Graph 绘制图像
+% plot(z(1:itcount),zeros(itcount,1),'rx'); % Plot the point with the dataset
+%% Show the result
+% 
 if (itcount <nmax)
     val = func(p);
     fprintf('Converged solution after %d iterations',itcount);
@@ -59,5 +57,3 @@ end
 function val = func(x)
     val = cos(x)-x;
 end
-%% 
-%

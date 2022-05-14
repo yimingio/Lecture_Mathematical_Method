@@ -1,7 +1,6 @@
 %% Newton Method
 % 
 %% Initialization
-
 clc;
 clear;
 close all; % Clear before
@@ -18,17 +17,15 @@ error = 10000;          % Error initialization
 % About the drawing related parameters, and start the graphic diagram to draw 
 % simple pictures
 
-
-xval = linspace(xmin,xmax,100); 
-for i=1:100
-    fval(i) = func(xval(i));        % Calculate function image points
-end
-plot(xval,fval);                    % Plot the function
-%% 
-% Start point calculation:
-
-grid on;
-hold on;
+% xval = linspace(xmin,xmax,100); 
+% for i=1:100
+%     fval(i) = func(xval(i));        % Calculate function image points
+% end
+% plot(xval,fval);                    % Plot the function
+% grid on;
+% hold on;
+%% Iteration(!!! No need to change)
+% 
 while (itcount <= nmax && error >=tol)  % When the number of iterations does not overflow, the error is still too large
     itcount =itcount+1;
     p = p_1-func(p_1)/funcdiff(p_1);    % Iteration function of the Newton's Method
@@ -40,10 +37,11 @@ while (itcount <= nmax && error >=tol)  % When the number of iterations does not
         p_1=p;                          % Set the result as the initial value for nex iteration
     end
 end
-%% 
-% Plot the Graph 绘制图像
-
-plot(z(1:itcount),zeros(itcount,1),'rx'); % Plot the point with the dataset
+%% Plot the dot Graph 绘制图像
+% 
+% plot(z(1:itcount),zeros(itcount,1),'rx'); % Plot the point with the dataset
+%% Show the result
+%
 if (itcount <nmax)
     val = func(p);
     fprintf('Converged solution after %d iterations',itcount);
@@ -57,8 +55,6 @@ end
 function val = func(x)
     val = cos(x)-x;
 end
-%% 
-% Here is the derivative of the above function
 
 function val = funcdiff(x)
     val = -sin(x)-1;
