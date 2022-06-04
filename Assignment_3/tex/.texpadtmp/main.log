@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=latex 2022.3.19)  4 JUN 2022 14:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=latex 2022.3.19)  4 JUN 2022 15:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -691,4 +691,4 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  99i,12n,104p,753b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/main.dvi (6 pages, 49764 bytes).
+Output written on /Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/main.dvi (6 pages, 49752 bytes).
