@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=latex 2022.3.19)  17 APR 2022 18:53
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (TeX Live 2022/dev) (preloaded format=latex 2022.3.19)  4 JUN 2022 14:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -505,14 +505,7 @@ File: l3backend-dvips.def 2022-02-07 L3 backend support: dvips
 LaTeX Warning: Unused global option(s):
     [a4].
 
-(/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/main.aux (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_1.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_2.aux
-
-LaTeX Warning: Label `question_1_origin' multiply defined.
-
-
-LaTeX Warning: Label `Q2_sqrt' multiply defined.
-
-) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_3.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_4.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_5.aux))
+(/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/main.aux (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/problem_1.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/problem_2.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/problem_3.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 27.
@@ -584,25 +577,26 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 27.
 LaTeX Info: Redefining \pageref on input line 27.
 LaTeX Info: Redefining \nameref on input line 27.
- (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/main.out) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/main.out)
+ (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/main.out) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
 
 \openout2 = `problem_1.aux'.
 
  (./problem_1.tex
-LaTeX Font Info:    Trying to load font information for U+msa on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 5.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
  (/usr/local/texlive/2021/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
-
+Overfull \hbox (21.12021pt too wide) detected at line 37
+[][][][]
  []
 
+)
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
 (fancyhdr)                Make it at least 41.55003pt, for example:
@@ -614,13 +608,11 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 
 ]
-Overfull \hbox (4.18173pt too wide) in paragraph at lines 110--116
-[][] 
- []
+\openout2 = `problem_2.aux'.
 
+ (./problem_2.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
 
-Overfull \hbox (27.68149pt too wide) in paragraph at lines 156--162
-[][] 
  []
 
 
@@ -630,7 +622,11 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
 
-[2])
+[2
+
+
+
+])
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
 (fancyhdr)                Make it at least 41.55003pt, for example:
@@ -639,19 +635,16 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
 
 [3]
-\openout2 = `problem_2.aux'.
+\openout2 = `problem_3.aux'.
 
- (./problem_2.tex
-Underfull \hbox (badness 10000) in paragraph at lines 8--9
+ (./problem_3.tex
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
 
-Package hyperref Warning: Suppressing empty link on input line 72.
-
-
-Overfull \hbox (30.94534pt too wide) in paragraph at lines 104--110
-[][] 
+Overfull \hbox (27.24573pt too wide) detected at line 64
+[][][][]
  []
 
 
@@ -666,11 +659,8 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 
 
 ]
-Overfull \hbox (31.59811pt too wide) in paragraph at lines 149--155
-[][] 
- []
-
-)
+File: fig/Q3.eps Graphic file (type eps)
+ <fig/Q3.eps>)
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
 (fancyhdr)                Make it at least 41.55003pt, for example:
@@ -679,13 +669,6 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
 
 [5]
-\openout2 = `problem_3.aux'.
-
- (./problem_3.tex
-Underfull \hbox (badness 10000) in paragraph at lines 11--12
-
- []
-
 
 Package fancyhdr Warning: \headheight is too small (40.0pt): 
 (fancyhdr)                Make it at least 41.55003pt, for example:
@@ -693,120 +676,19 @@ Package fancyhdr Warning: \headheight is too small (40.0pt):
 (fancyhdr)                You might also make \topmargin smaller to compensate:
 (fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
 
-[6
-
-
-
-])
-
-Package fancyhdr Warning: \headheight is too small (40.0pt): 
-(fancyhdr)                Make it at least 41.55003pt, for example:
-(fancyhdr)                \setlength{\headheight}{41.55003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
-
-[7]
-\openout2 = `problem_4.aux'.
-
- (./problem_4.tex
-Underfull \hbox (badness 10000) in paragraph at lines 17--18
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (40.0pt): 
-(fancyhdr)                Make it at least 41.55003pt, for example:
-(fancyhdr)                \setlength{\headheight}{41.55003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
-
-[8
-
-
-
-])
-
-Package fancyhdr Warning: \headheight is too small (40.0pt): 
-(fancyhdr)                Make it at least 41.55003pt, for example:
-(fancyhdr)                \setlength{\headheight}{41.55003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
-
-[9]
-\openout2 = `problem_5.aux'.
-
- (./problem_5.tex
-Underfull \hbox (badness 10000) in paragraph at lines 18--19
-
- []
-
-File: fig/Q5_plot.eps Graphic file (type eps)
-<fig/Q5_plot.eps>
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
- []
-
-
-Package fancyhdr Warning: \headheight is too small (40.0pt): 
-(fancyhdr)                Make it at least 41.55003pt, for example:
-(fancyhdr)                \setlength{\headheight}{41.55003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
-
-[10
-
-
-
-]
-File: fig/Q5_d_1.eps Graphic file (type eps)
- <fig/Q5_d_1.eps>
-File: fig/Q5_d_2.eps Graphic file (type eps)
- <fig/Q5_d_2.eps>
-
-Package fancyhdr Warning: \headheight is too small (40.0pt): 
-(fancyhdr)                Make it at least 41.55003pt, for example:
-(fancyhdr)                \setlength{\headheight}{41.55003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
-
-[11]
-File: fig/Q5_d_3.eps Graphic file (type eps)
- <fig/Q5_d_3.eps>
-
-Package fancyhdr Warning: \headheight is too small (40.0pt): 
-(fancyhdr)                Make it at least 41.55003pt, for example:
-(fancyhdr)                \setlength{\headheight}{41.55003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
-
-[12]
-File: fig/Q5_d_4.eps Graphic file (type eps)
- <fig/Q5_d_4.eps>
-File: fig/Q5_d_5.eps Graphic file (type eps)
- <fig/Q5_d_5.eps>)
-
-Package fancyhdr Warning: \headheight is too small (40.0pt): 
-(fancyhdr)                Make it at least 41.55003pt, for example:
-(fancyhdr)                \setlength{\headheight}{41.55003pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-(fancyhdr)                \addtolength{\topmargin}{-1.55003pt}.
-
-[13] 
+[6] 
 AED: lastpage setting LastPage
-(/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/main.aux (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_1.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_2.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_3.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_4.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/problem_5.aux))
-
-LaTeX Warning: There were multiply-defined labels.
-
+(/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/main.aux (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/problem_1.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/problem_2.aux) (/Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/problem_3.aux))
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 20565 strings out of 478277
- 385254 string characters out of 5846516
- 699517 words of memory out of 5000000
- 38404 multiletter control sequences out of 15000+600000
+ 20450 strings out of 478277
+ 382045 string characters out of 5846516
+ 704729 words of memory out of 5000000
+ 38308 multiletter control sequences out of 15000+600000
  474558 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 99i,12n,104p,563b,556s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 99i,12n,104p,753b,465s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on /Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_1/tex/.texpadtmp/main.dvi (13 pages, 85048 bytes).
+Output written on /Users/guoyiming/Workspace/Matlab/Lecture_Numerical_Method/Assignment_3/tex/.texpadtmp/main.dvi (6 pages, 49764 bytes).

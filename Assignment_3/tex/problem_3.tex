@@ -33,7 +33,7 @@ c) Comment on your results in (a) and (b).
 
 
 
-And we can plot the graph as:
+And we can plot the table as:
 
 
 \begin{equation*}
@@ -75,12 +75,44 @@ $$
 \end{aligned}
 $$
 
-And we can find that both method give a very close answer with the exact value. And Composite Simpson Law seems to be closer to the exact result.However due to the rounding off 4 digits, we can not see what exact is the error for this 2 methods, 
+And we can find that both method give a very close answer with the exact value. And Composite Simpson Law seems to be closer to the exact result.However due to the rounding off with 4 digits, we can not determine the accurate error in this situation because the error is relatively too small. We may first verify the result with the computer's result, here list the result by composite Simpson's formula and Romberg integration result respectively (The code is attached in footnote link):
 
 
+ Here first is the result from Composite Simpson's formula: 
+ $$
+ f_{simpson}=4.666631373794358
+ $$
 
 
+And next we list the result of Romberg integration result:
 
+
+% Please add the following required packages to your document preamble:
+% \usepackage{booktabs}
+\begin{table}[htb]
+\centering
+\begin{tabular}{@{}lll@{}}
+\toprule
+4.500000000000000 & 0                 & 0                 \\
+4.621708245126285 & 4.662277660168379 & 0                  \\
+4.655092592511359 & 4.666220708306383 & 4.666483578182250 \\ \bottomrule
+\end{tabular}
+\end{table}
+
+And we can calculate and find that for composite Simpson	 formula: the absolute error is $0.00003529$,
+ relative error is $0.00000756$. As for Romberg Formula: the absolute error is $0.00018309$, relative error is $0.00003923$. Which means the the Composite Simpson law is much accurate in this situation. 
+ 
+ 
+We are not sure if these two methods have different results in other $n$ intervals.Here we use Matlab to derive the $2^n$ interval for 2 method and compute their relative error for 2 methods. And we can plot the  graph as \ref{Q3_graph}. And we can find that the relative error for Romberg integration is rapidly decrease at first time and later become flat as the increase of interval, comparing with the composite Simpson Rules, it initially start with the relatively small at $n=2$ and decrease with the interval increase mildly. Additionally, we can calculate and find out that since the interval increase to $2^5=32$, the Romberg start to have a better prediction campaign with Composite Simpson. 
+
+
+Therefore we can conclude that in this example we can find that the Composite Simpson Formula can have a better prediction when the interval number is small. But if the interval number increasing, the relative error for Romberg will reduce rapidly and finally the accuracy will be better than the Composite Simpson Formula.
+
+\begin{figure}
+	\centering
+  \includegraphics[width=15cm]{fig/Q3}
+  \caption{The relative error for Composite Simpson Formula and Romberg Formula of $\int_1^4 \sqrt{t} \mathrm d t$ with $2^n$ interval} \label{Q3_graph}
+\end{figure}
 
 
 \end{solution}
