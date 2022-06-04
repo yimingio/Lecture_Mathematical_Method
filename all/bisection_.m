@@ -7,9 +7,9 @@ clear;
 close all; %Clear before
 %% Add initial condition
 %
-tol = 1.e-3;            % Tolorence of result
-a = 2;                  % Initial left value
-b = 3;                  % Initial right value
+tol = 1.e-4;            % Tolorence of result
+a = 1;                  % Initial left value
+b = 2;                  % Initial right value
 nmax = 100;             % Number of initialization iterations
 itcount = 0;            % Number of initialization iterations
 error = 10000;          % Error initialization         
@@ -21,7 +21,7 @@ error = 10000;          % Error initialization
 % end
 % plot(xval,fval);                    % Plot the function
 %grid on;
-hold on;
+% hold on;
 %% Iteration(!!!!This part no need to change)
 % 
 while (itcount <= nmax && error >=tol)      % When the number of iterations does not overflow, the error is still too large
@@ -54,7 +54,7 @@ end
 %% Appendix
 %
 function y = func(x)
-    y = x^2-5*x+6.24;
+    y = x^3+4*x^2-10;
 end
 
 

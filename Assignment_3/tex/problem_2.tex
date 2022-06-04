@@ -1,0 +1,210 @@
+
+\chead{Question 2} 
+
+\begin{tcolorbox}
+\textbf{Question 2} Determine the values of $n$ and $h$ required to approximate $\int_{0}^{2} x^{2} \sin (-x) d x$ to within $10^{-6}$ using the Composite Trapezoid Rule, Composite Midpoint Rule and Composite Simpson's Rule respectively.
+
+
+Hint: You do not need to solve the numerical integration.
+\end{tcolorbox}
+
+\begin{solution}\ \\
+
+
+Here we start with the Composite Trapezoid Rule, we recall that:
+\begin{equation}
+	\int_{a}^{b} f(x) d x=\frac{h}{2}\left[f(a)+2 \sum_{j=1}^{n-1} f\left(x_{j}\right)+f(b)\right]-\frac{b-a}{12} h^{2} f^{\prime \prime}(\mu)
+\end{equation}
+
+
+Here we have the error term as $\frac{b-a}{12} h^{2} f^{\prime \prime}(\mu)$, and then we find that maximum of of the error turn, first find the $|f''_{max}|$
+
+
+ \begin{equation}
+f(x)=x^{2} \sin (-x)
+\end{equation}
+
+
+\begin{equation}
+f^{\prime}(x)=2 x \sin (-x)-x^{2} \cos (-x)
+\end{equation}
+
+
+\begin{equation}
+f^{\prime \prime}(x) =\left(x^{2}-2\right) \sin (x)-4 x \cos (x)
+\end{equation}
+
+Here we try to find the absolute value of second derivative:
+
+
+\begin{equation}
+\begin{aligned}
+\left|f^{\prime \prime}(x)\right| &=\left|\left(x^{2}-2\right) \sin (x)-4 x \cos (x)\right| \\
+&\leq | \left( x^{2}-2\right) \sin (x)|+| 4 x \cos (x) | \\
+& \leq\left|x^{2}-2\right|+|4 x| \leq\left|(2)^{2}-2\right|+|4 \cdot 2|=10
+\end{aligned}		\label{f''}
+\end{equation}
+
+
+
+Therefore we can derive the error term's maximum
+
+
+\begin{equation*}
+\frac{b-a}{12} h^{2} f^{\prime \prime}(\mu) \leq \frac{2-0}{12} h^{2} \cdot 10 \leq 10^{-6}
+\end{equation*}
+
+
+And it turn out that:
+
+
+$$
+h \leq 7.7460 \times 10^{-4}
+$$
+
+
+And we can have the $n$ that:
+
+
+$$
+n \geq \frac{b-a}{h}=2582
+$$
+
+
+
+
+
+
+
+\dotfill
+
+
+Next we find the Composite Midpoint Rule
+
+
+\begin{equation}
+\int_{a}^{b} f(x) d x=2 h \sum_{j=0}^{n / 2}+\frac{b-a}{6} h^{2} f^{\prime \prime}(\mu)
+\end{equation}
+
+
+And we have the second derivative same with the previous one:
+
+
+\begin{equation}
+f^{\prime \prime}(x)=\left(x^{2}-2\right) \sin (x)-4 x \cos (x)
+\end{equation}
+
+This part is similar with the part in \ref{f''}, and we can caculate the error term here:
+
+
+$$
+\frac{b-a}{b} h^{2} f^{\prime \prime}(\mu)\leq \frac{2-0}{6} h^{2} \cdot 10 \leq 10^{-6}
+$$
+
+
+$$
+h \leq 5.477 \times 10^{-4}
+$$
+
+
+And we can turn out that:
+$$
+n \geq \frac{b-a}{h}=3652
+$$
+
+
+
+
+
+\dotfill
+
+
+
+
+Next we find the Composite Simpson Rule
+
+\begin{equation*}
+	\int_{a}^{b} f(x) d x=\frac{h}{3}\left[f(a)+2 \sum_{j=1}^{(n / 2)-1} f\left(x_{2 j}\right)+4 \sum_{j=1}^{n / 2} f\left(x_{2 j-1}\right)+f(b)\right]-\frac{b-a}{180} h^{4} f^{(4)}(\mu)
+\end{equation*}
+
+
+Here the error term is $\frac{b-a}{180} h^{4} f^{(4)}(\mu)$, then we first find the fourth derivative:
+
+
+\begin{equation*}
+\begin{aligned}
+f^{\prime \prime}(x)&=\left(x^{2}-2\right) \sin (x)-4 x \cos (x) \\
+f^{\prime \prime \prime}(x)&=\left(x^{2}-6\right) \cos (x)+6 x \sin (x) \\
+f^{(4)}(x)&=8 x \cos (x)-\left(x^{2}-12\right) \sin (x)
+\end{aligned}
+\end{equation*}
+
+
+Next determine the maximum of the fourth derivative:
+
+
+\begin{equation*}
+\begin{aligned}
+\left|f^{(4)}(x)\right| &=\left|8 x \cos (x)-\left(x^{2}-12\right) \sin (x)\right| \\
+& \leq|8 x \cos (x)|+\mid\left(x^{2}-127 \sin (x) \mid\right.\\
+& \leq|8 x|+\left|x^{2}-12\right|=8 x+12-x^{2} \\
+&=-(x-4)^{2}+28 \leq 24
+\end{aligned}
+\end{equation*}
+
+
+And the error term could be transform into below form:
+
+
+\begin{equation}
+\begin{aligned}
+	\frac{2-0}{180} h^{4} \cdot 24 &\leq 10^{-6}\\
+	h & \leq 4.401 \times 10^{-2}
+\end{aligned}
+\end{equation}
+
+And we can turn out that:
+
+
+\begin{equation}
+n \geq \frac{b-a}{h}=4 6
+\end{equation}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{solution}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

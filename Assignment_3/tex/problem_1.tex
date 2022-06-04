@@ -1,0 +1,75 @@
+
+\chead{Question 1} 
+
+\begin{tcolorbox}
+\textbf{Question 1} The forward-difference formula can be expressed as:
+$$
+f^{\prime}\left(x_{0}\right)=\frac{1}{h}\left[f\left(x_{0}+h\right)-f\left(x_{0}\right)\right]-\frac{h}{2} f^{\prime \prime}\left(x_{0}\right)-\frac{h^{2}}{6} f^{\prime \prime}\left(x_{0}\right)+O\left(h^{3}\right)
+$$
+Use extrapolation to derive an $O\left(h^{3}\right)$ formula for $f^{\prime}\left(x_{0}\right)$.
+\end{tcolorbox}
+
+\begin{solution}\ \\
+Here we have that:
+
+
+\begin{equation}
+	f^{\prime}\left(x_{0}\right)=\frac{1}{h}\left(f\left(x_{0}+h\right)-f\left(x_{0}\right)\right)-\frac{h}{2} f^{\prime \prime}\left(x_{0}\right)-\frac{h^{2}}{6} f^{\prime \prime \prime}\left(x_{0}\right)+O\left(h^{3}\right) \label{Q1_1}
+\end{equation}
+
+
+
+Here we replace $h$ with $2h$
+
+
+\begin{equation}
+f^{\prime}\left(x_{0}\right)=\frac{1}{2 h}\left(f\left(x_{0}+2 h\right)-f\left(x_{0}\right)\right)-h f^{\prime \prime}\left(x_{0}\right)-\frac{4 h^{2}}{6} f^{\prime \prime \prime}\left(x_{0}\right) +O\left(h^{3}\right) \label{Q1_2}
+\end{equation} 
+
+Then we multiply \ref{Q1_1} with 2 and subtract the \ref{Q1_2}:
+
+
+\begin{equation}
+\begin{aligned}
+&f^{\prime}\left(x_{0}\right)=\frac{2}{h}\left(f\left(x_{0}+h\right)-f\left(x_{0}\right)\right)-\frac{1}{2 h}\left(f\left(x_{0}+2 h\right)-f\left(x_{0}\right)\right)-\frac{h^{2}}{3} f^{\prime \prime \prime}\left(x_{0}\right)+\frac{2 h^{2}}{3} f^{\prime \prime \prime}\left(x_{0}\right)+O\left(h^{3}\right) \\
+& \label{Q1_3}
+\end{aligned}
+\end{equation}
+
+
+
+Next we replace the h with 2h in \ref{Q1_3}:
+
+
+\begin{equation}
+f^{\prime}\left(x_{0}\right)=\frac{1}{h}\left(f\left(x_{0}+2 h\right)-f\left(x_{0}\right)\right)-\frac{1}{4 h}\left(f\left(x_{0}+4 h\right)-f\left(x_{0}\right)\right)+\frac{4 h^{2}}{3} f^{\prime \prime \prime}\left(x_{0}\right)+O\left(h^{3}\right) \label{Q1_4}
+\end{equation}
+
+Then we multiply the\ref{Q1_3} with 4 and substract \ref{Q1_4}:
+
+
+\begin{equation}
+\begin{aligned}
+3 f^{\prime}\left(x_{0}\right) &=\frac{8}{h}\left(f\left(z_{0}+h\right)-f\left(x_{0}\right)\right)-\frac{2}{h}\left(f\left(x_{0}+2 h\right)-f\left(x_{0}\right)\right)+\frac{4 h^{2}}{3} f^{\prime \prime}\left(x_{0}\right) \\
+&-\frac{1}{h}\left(f\left(x_{0}+2 h\right)-f\left(x_{0}\right)\right)+\frac{1}{4 h}\left(f\left(x_{0}+4 h\right)-f\left(x_{0}\right)\right)-\frac{4 h^{2}}{3} f^{\prime \prime}\left(z_{0}\right)+O\left(h^{3}\right)
+\end{aligned}
+\end{equation}
+
+And we can summarize that:
+
+
+\begin{equation}
+f^{\prime}\left(x_{0}\right)=\frac{1}{12 h}\left(f\left(x_{0}+4 h\right)-12 f(20+2 h)+32 f\left(x_{0}+h\right)-21 f\left(x_{0}\right)\right)+O\left(h^{3}\right)
+\end{equation}
+
+
+
+
+
+
+\end{solution}
+
+
+
+
+

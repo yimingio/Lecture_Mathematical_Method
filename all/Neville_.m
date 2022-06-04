@@ -6,8 +6,8 @@ clc;
 clear;
 %% Input the initial point:
 % 
-X = [1.0 1.3 1.6 1.9]; % Initial Value
-xvalue=1.5;            % Approximation Value
+X = [2 2.2 2.3]; % Initial Value
+xvalue=21;            % Approximation Value
 n = size(X);
 n = n(2);
 Y=[];
@@ -31,5 +31,5 @@ end
 %% Appendix Function
 
 function y = func(x)
-    y=x^2;
+    y=log(x);
 end
