@@ -7,10 +7,10 @@ m=[];
 for i=1:n-1
     %Check and switch to check pivot to be not 0
     p=i;
-    while Aau(p,i)==0 & p <= n+1    
+    while Aau(p,i)==0 & p <= n-1    
         p=p+1;
     end
-    if p==n+1
+    if p==n & Aau(p,i)==0
         disp("No unique solution found, please check");
         break
     end
