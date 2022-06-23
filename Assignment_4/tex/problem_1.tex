@@ -31,7 +31,207 @@ Given an initial value problem $y^{\prime}=y^{2} \sin (t)$ with $y(0)=-3$.
 \begin{solution}\ \\
 
 
-With $n=2$ we have $h=(\pi/2)/2=\pi/4$, $t_i$
+\textbf{(a) Euler's method}
+
+
+
+With $n=2$ we have $h=(\pi/2)/2=\pi/4$, $t_i=\pi \cdot i /4$, $w_0=y(0)=-3$:
+
+
+$$
+w_{i+1}=w_i+h(w_u^2 \sin(t_i))=w_i+\frac{\pi}{4}(w_i^2 \sin(\pi i /4))
+$$
+
+
+For $t_0=0$
+
+$$
+w_0=y(0)=-3.0000
+$$
+
+For $t_1=\frac{\pi}{4}$
+
+
+$$
+w_1=w_0+\frac{\pi}{4} \left( w_0^2 \sin(0) \right)=-3.0000
+$$
+
+
+For $t_2=\frac{\pi}{2}$
+
+
+$$
+w_2=w_1+\frac{\pi}{4} \left( w_1^2 \sin(\frac{\pi}{4}) \right)=1.9982
+$$
+
+
+Therefore 
+$$
+y(\frac{\pi}{2})=w_2=1.9982
+$$
+
+
+\dotfill
+
+\textbf{(b) Taylor's method of second order}
+
+
+
+With $n=2$ we have $h=(\pi/2)/2=\pi/4$, $t_i=\pi \cdot i /4$, $w_0=y(0)=-3$:
+
+And
+
+$$
+\begin{aligned}
+f^{\prime}(t) &=\frac{\partial f}{\partial t}+\frac{\partial f}{\partial y} \frac{\partial y}{\partial t} \\
+&=y^{2} \cos (t)+\left(y^{2} \sin (t)\right) \cdot 2 y \sin (t) \\
+&=y^{2} \cos (t)+2 y^{3} \sin ^{2}(t)
+\end{aligned}
+$$
+
+
+Here the iteration function is
+
+$$
+w_{i+1}=w_i+h \left(  f(t_i,w_i)+ \frac{h}{2} f'(t_0,w_0)   \right)
+$$
+
+
+For $t_0=0$
+
+$$
+w_0=y(0)=-3.0000
+$$
+
+For $t_1=\frac{\pi}{4}$
+
+
+$$
+\begin{aligned}
+w_{1} &=w_{0}+h\left(f\left(t_{0}, w_{0}\right)+\frac{h}{2} f^{\prime}\left(t_{0}, w_{0}\right)\right) \\
+&=(-3)+\frac{\pi}{4}\left((-3)^{2} \sin (0)+\frac{1}{2} \cdot \frac{\pi}{4} \cdot\left((-3)^{2} \cos (0)+2(-3)^{3} \sin (0)\right)\right)\\
+&=-3+\frac{9 \pi^{2}}{32}=-0.2242
+\end{aligned}
+$$
+
+
+For $t_2=\frac{\pi}{2}$
+
+
+$$
+\begin{aligned}
+w_{2} &=(-0.2242)+\frac{\pi}{4}\left((-0.2242)^{2} \sin \left(\frac{\pi}{4}\right)+\frac{\pi}{8}\left(2(-0.2242)^{3} \sin ^{2}\left(\frac{\pi}{4}\right)+(-0.2242)^{2} \cos \left(\frac{\pi}{4}\right)\right)\right.\\
+&=-0.1888
+\end{aligned}
+$$
+
+
+Therefore 
+$$
+y(\frac{\pi}{2})=w_2=-0.1888
+$$
+\dotfill
+
+
+\textbf{(c) Modified Euler method}
+
+
+
+With $n=2$ we have $h=(\pi/2)/2=\pi/4$, $t_i=\pi \cdot i /4$, $w_0=y(0)=-3$:
+
+
+
+Here the iteration function is
+
+$$
+w_{i+1}=w_{i}+\frac{h}{2}\left(f\left(t_{i}, w_{i}\right)+f\left(t_{i+1}, w_{i}+h f\left(t_{i}, w_{i}\right)\right)\right.
+$$
+
+
+For $t_0=0$
+
+$$
+w_0=y(0)=-3.0000
+$$
+
+For $t_1=\frac{\pi}{4}$
+
+
+$$
+\begin{aligned}
+w_{1} &=-3+\frac{\pi}{8}\left((-3)^{2} \sin (0)+\left(-3+\frac{\pi}{4}\left((-3)^{2} \sin (0)\right)\right)^{2} \sin \left(\frac{\pi}{4}\right)\right) \\
+&=\frac{9 \sqrt{2} \pi}{16}-3=-0.5009
+\end{aligned}
+$$
+
+
+For $t_2=\frac{\pi}{2}$
+
+
+$$
+\begin{aligned}
+W_{2} &=(-0.5009)+\frac{\pi}{8}\left((-0.5009)^{2} \sin \left(\frac{\pi}{4}\right)+\left((-0.5009)+\frac{\pi}{4}\left((-0.5009)^{2} \sin \left(\frac{\pi}{4}\right)\right)^{2} 5 \operatorname{in}\left(\frac{\pi}{2}\right)\right)\right.\\
+&=-0.3799
+\end{aligned}
+$$
+
+
+
+
+Therefore 
+$$
+y(\frac{\pi}{2})=w_2=-0.3799
+$$
+
+
+\dotfill
+
+
+\textbf{(d) Compare relative error}
+
+$$
+\varepsilon_{\text {Euler }}=\left|\frac{-0.75-(1.9982)}{-0.75}\right|=3.6643
+$$
+
+
+$$
+\varepsilon_{\text {taylor }}=\left|\frac{-0.75-(-0.2242)}{-0.75}\right|=0.7483
+$$
+
+
+$$
+\varepsilon_{\text {Modified }}=\left|\frac{-0.75-(-0.1888)}{-0.75}\right|=0.4935
+$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
