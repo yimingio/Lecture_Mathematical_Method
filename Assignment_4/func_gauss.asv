@@ -17,18 +17,17 @@ for i=1:n-1
     Atemp=Aau(i,:);
     Aau(i,:)=Aau(p,:);
     Aau(p,:)=Atemp;
-    if i ~= p
+    if i != p
         frpintf("switch the row %d with %d \n",i,p);
     end
 
     for j=i+1:n
         m(j,i)=Aau(j,i)/Aau(i,i);
         Aau(j,:)=Aau(j,:)-m(j,i).*Aau(i,:);
-        fprintf("Perform the operation E%d -%8.5f E%d -> E%d \n",j,m(j,i),i,j);
+        fprintf("Perform the operation E%d -%8.5f E%d -> E%d",j,)
         Aau=round(Aau,2);
     end
     Ag{i +1}=Aau;
-    disp(Aau);
 end
 
 if Aau(n,n)== 0
