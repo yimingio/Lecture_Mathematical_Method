@@ -1,4 +1,11 @@
-function [x,Ag,m] = func_gauss(A,B)
+A=[4.3,6.6,-5.3,6.8;
+    2.5,-1.2,+6.6,-2.0;
+    5.4,2.2,-2.6,3.5;
+    -7.2,5.3,-1.3,4.9];
+B=[48.81;
+    -30.50;
+    45.69;
+    -18.15];
 Ag={};                                                  %Create a cell array to store each matrix
 Aau=[A,B];                                              %Generate the augmented matrix
 Ag{1}=Aau;                                              %Store the first initial matrix
@@ -17,17 +24,20 @@ for i=1:n-1
     Atemp=Aau(i,:);
     Aau(i,:)=Aau(p,:);
     Aau(p,:)=Atemp;
-    if i != p
+    if i ~= p
         frpintf("switch the row %d with %d \n",i,p);
     end
 
     for j=i+1:n
         m(j,i)=Aau(j,i)/Aau(i,i);
         Aau(j,:)=Aau(j,:)-m(j,i).*Aau(i,:);
-        fprintf("Perform the operation E%d -%8.5f E%d -> E%d",j,)
+        mr(j,i)=round(m(j,i),2);
+        fprintf("Perform the operation E(%d) - (%8.5f) " + ...
+            "E(%d) -> E(%d) \n",j,mr(j,i),i,j);
         Aau=round(Aau,2);
     end
     Ag{i +1}=Aau;
+    disp(Aau);
 end
 
 if Aau(n,n)== 0
@@ -50,5 +60,5 @@ else
     end
 end
 
-end
+disp(x);
 
