@@ -30,8 +30,9 @@ for i=1:n-1
     fprintf("Perform the operation \n")
     for j=i+1:n
         m(j,i)=Aau(j,i)/Aau(i,i);
+        m(j,i)=round(m(j,i),2);
         Aau(j,:)=Aau(j,:)-m(j,i).*Aau(i,:);
-        mr(j,i)=round(m(j,i),2);
+        mr(j,i)=m(j,i);
         fprintf(" $ ( E_{%d} - (%4.2f) E_{%d}) \\rightarrow (E_{%d}) $, ",j,mr(j,i),i,j);
         Aau=round(Aau,2);
     end

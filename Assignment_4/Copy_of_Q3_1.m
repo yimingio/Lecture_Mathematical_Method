@@ -1,11 +1,7 @@
-A=[4.3,6.6,-5.3,6.8;
-    2.5,-1.2,+6.6,-2.0;
-    5.4,2.2,-2.6,3.5;
-    -7.2,5.3,-1.3,4.9];
-B=[48.81;
-    -30.50;
-    45.69;
-    -18.15];
+A=[1,-1,2;
+    -1,2,-4;
+    2,-4,9];
+B=[-1;4;-9];
 Ag={};                                                  %Create a cell array to store each matrix
 Aau=[A,B];                                              %Generate the augmented matrix
 Ag{1}=Aau;                                              %Store the first initial matrix
@@ -61,7 +57,7 @@ fprintf("\n \n")
         end
         x(i)=(Aau(i,n+1)-sum)/Aau(i,i);
         x(i)=round(x(i),2);
-        fprintf("$$ \n x_{%d}=\\left[a_{%d, %d}-\\sum_{j=%d}^{%d} a_{%d j} x_{j}\\right] / a_{%d %d}=%4.2f \n $$ \n",i,i,n+1,i+1,n,i,i,i);
+        fprintf("$$ \n x_{%d}=\\left[a_{%d, %d}-\\sum_{j=%d}^{%d} a_{%d j} x_{j}\\right] / a_{%d %d}=%4.2f \n $$ \n",i,i,n+1,i+1,n,i,i,i,x(i));
     end
 end
 

@@ -4,7 +4,14 @@
 \begin{tcolorbox}
 \textbf{Question 4} 
 
-
+Use the LU factorization to solve the following system.
+$$
+\begin{aligned}
+x-y+2 z &=-1 \\
+-x+2 y-4 z &=4 \\
+2 x-4 y+9 z &=-9
+\end{aligned}
+$$
 
 
 
@@ -13,15 +20,170 @@
 \end{tcolorbox}
 
 \begin{solution}\ \\
+Here we can transform the equation system into $A$ and $\mathbf b$ and written the linear system as $A \mathbf x = \mathbf b$ where
+
+$$ 
+A=
+ \begin{bmatrix} 
+    1.00 &    -1.00 &     2.00 \\ 
+   -1.00 &     2.00 &    -4.00 \\ 
+    2.00 &    -4.00 &     9.00 \\ 
+\end{bmatrix} 
+ $$ 
+and
+$$ 
+\mathbf b=
+ \begin{bmatrix} 
+   -1.00 \\ 
+    4.00 \\ 
+   -9.00 \\ 
+\end{bmatrix} 
+ $$ 
+
+
+Here we first determine the LU factorization:
+
+Perform the operation 
+ $ ( E_{2} - (-1.00) E_{1}) \rightarrow (E_{2}) $,  $ ( E_{3} - (2.00) E_{1}) \rightarrow (E_{3}) $, 
+ 
+ $ ( E_{3} - (-2.00) E_{2}) \rightarrow (E_{3}) $, And turn out the $\mathbf U$ upper triangle matrix.
+ 
+$$ 
+\mathbf U=
+ \begin{bmatrix} 
+    1.00 &    -1.00 &     2.00  \\ 
+    0.00 &     1.00 &    -2.00  \\ 
+    0.00 &     0.00 &     1.00  \\ 
+\end{bmatrix} 
+ $$ 
+
+ 
+ As the multipliers $m_{ij}$ could construct $\mathbf L$ the lower triangle matrix
+ 
+ 
+ $$ 
+ \mathbf L =
+ \begin{bmatrix} 
+    1.00 &     0.00 &     0.00 \\ 
+   -1.00 &     1.00 &     0.00 \\ 
+    2.00 &    -2.00 &     1.00 \\ 
+\end{bmatrix} 
+ $$
+ 
+ 
+ Then we can produce the factorization:
+ 
+ $$
+ \mathbf A =\mathbf L \mathbf U 
+=
+ \begin{bmatrix} 
+    1.00 &     0.00 &     0.00 \\ 
+   -1.00 &     1.00 &     0.00 \\ 
+    2.00 &    -2.00 &     1.00 \\ 
+\end{bmatrix} 
+\begin{bmatrix} 
+    1.00 &    -1.00 &     2.00  \\ 
+    0.00 &     1.00 &    -2.00  \\ 
+    0.00 &     0.00 &     1.00  \\ 
+\end{bmatrix} 
+ $$
+ 
+ 
+ Next we solve:
+ 
+ 
+$$
+\mathbf L \mathbf U \mathbf x=
+\begin{bmatrix} 
+    1.00 &     0.00 &     0.00 \\ 
+   -1.00 &     1.00 &     0.00 \\ 
+    2.00 &    -2.00 &     1.00 \\ 
+\end{bmatrix} 
+\begin{bmatrix} 
+    1.00 &    -1.00 &     2.00  \\ 
+    0.00 &     1.00 &    -2.00  \\ 
+    0.00 &     0.00 &     1.00  \\ 
+\end{bmatrix} 
+\begin{bmatrix} 
+    x_1  \\ 
+    x_2  \\ 
+    x_3  \\ 
+\end{bmatrix}=
+ \begin{bmatrix} 
+   -1.00 \\ 
+    4.00 \\ 
+   -9.00 \\ 
+\end{bmatrix} 
+ $$
+ 
+ 
+ we first introduce the substitution $\mathbf{y}=U \mathbf{x}$. Then $\mathbf{b}=L(U \mathbf{x})=L \mathbf{y}$. That is,
+ 
+ 
+ $$
+ \begin{bmatrix} 
+    1.00 &     0.00 &     0.00 \\ 
+   -1.00 &     1.00 &     0.00 \\ 
+    2.00 &    -2.00 &     1.00 \\ 
+\end{bmatrix} \begin{bmatrix} 
+    y_1  \\ 
+    y_2  \\ 
+    y_3  \\ 
+\end{bmatrix}=
+ \begin{bmatrix} 
+   -1.00 \\ 
+    4.00 \\ 
+   -9.00 \\ 
+\end{bmatrix} 
+$$
+ 
+That we can determine by forward-substitution process:
+
+$$
+\begin{aligned}
+	 &y_1 &&= -1 \\
+	 -&y_1+y_2& & =4 \\
+	 2&y_1-2y_2&+y_3 &=-9
+\end{aligned}
+$$
+
+And
+
+\begin{equation*}
+	\left\{
+\begin{aligned}
+y_1 &= -1\\
+y_2 &= 3\\
+y_3 &= -1\\
+\end{aligned}
+\right.
+\end{equation*}
+
+
+Then solve $U \mathbf{x}=\mathbf{y}$ for $\mathbf{x}$, the solution of the original system; that is,
+
+
+$$
+\begin{bmatrix} 
+    1.00 &    -1.00 &     2.00  \\ 
+    0.00 &     1.00 &    -2.00  \\ 
+    0.00 &     0.00 &     1.00  \\ 
+\end{bmatrix} 
+\begin{bmatrix} 
+    x_1  \\ 
+    x_2  \\ 
+    x_3  \\ 
+\end{bmatrix}=
+\begin{bmatrix} 
+    -1  \\ 
+    3  \\ 
+    -1  \\ 
+\end{bmatrix}
+$$
 
 
 
-
-
-
-
-
-
-
+ 
+Using backward substitution we obtain $x_3=-1$,$x_2=1$,$x_1=2$.
 
 \end{solution}

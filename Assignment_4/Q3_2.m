@@ -26,7 +26,6 @@ disp(Aau);
 
 
 for i=1:n-1
-    fprintf("-----------------------------------------------------------\n")
     %Check and switch to check pivot to be not 0
     p=i;
     for j=i:n
@@ -43,8 +42,8 @@ for i=1:n-1
         NCOPY=NROW(i);
         NROW(i)=NROW(p);
         NROW(p)=NCOPY;
-        fprintf("Here find tha maximum on row %d",p);
-        fprintf(". Switch the row between %d and %d \n",p,i);
+        fprintf("Here find tha maximum on $E_{%d}$",p);
+        fprintf(". Switch the row  $(E_{%d}) \\leftrightarrow (E_{%d})$ \n",p,i);
     end
 
     %Generate the matrix we need
@@ -53,14 +52,14 @@ for i=1:n-1
     for k=1:n
         Aaucopy=[Aaucopy;Aau(NROW(k),:)];
     end
-    disp(Aaucopy);
-
+    display_aug_mat(Aaucopy);
+    fprintf("Perform the operation \n")
     for j=i+1:n
         m(NROW(j),i)=Aau(NROW(j),i)/Aau(NROW(i),i);
+        m(NROW(j),i)=round(m(NROW(j),i),2);
         Aau(NROW(j),:)=Aau(NROW(j),:)-m(NROW(j),i).*Aau(NROW(i),:);
         Aau=round(Aau,2);
-        fprintf("Perform the operation E(%d) - (%8.5f) " + ...
-            "E(%d) -> E(%d) \n",NROW(j),m(NROW(j),i),NROW(i),NROW(j));
+        fprintf(" $ ( E_{%d} - (%4.2f) E_{%d}) \\rightarrow (E_{%d}) $, ",NROW(j),m(NROW(j),i),NROW(i),NROW(j));
     end
     %Generate the matrix we need
     Aaucopy=[];
@@ -69,7 +68,8 @@ for i=1:n-1
         Aaucopy=[Aaucopy;Aau(NROW(k),:)];
     end
     Aaucopy=round(Aaucopy,2);
-    disp(Aaucopy);
+    fprintf("\n \n");
+    display_aug_mat(Aaucopy);
     Ag{i +1}=Aau;
     
  
@@ -79,18 +79,24 @@ end
 if Aau(NROW(n),n)== 0
     disp("No unique Solution Exist");
 else
+
+    fprintf("Finally, the matrix is converted back into a linear system " + ...
+        "that has a solution equivalent to the solution of the original system " + ...
+        "and the backward substitution is applied: \n \n")
     % Start the backward substituition
     x=[];
     x(n)=Aau(NROW(n),n+1)/Aau(NROW(n),n);
-        
+        xn=round(x(n),2);
+    fprintf("$$ \n x_{%d}=%4.2f \n $$ \n",n,xn)
     for i=n-1:-1:1
         sum=0;
         for j=i+1:n
             sum=sum+Aau(NROW(i),j)*x(j);
         end
         x(i)=(Aau(NROW(i),n+1)-sum)/Aau(NROW(i),i);
+        x(i)=round(x(i),2);
+        fprintf("$$ \n x_{%d}=\\left[a_{%d, %d}-\\sum_{j=%d}^{%d} a_{%d j} x_{j}\\right] / a_{%d %d}=%4.2f \n $$ \n",i,i,n+1,i+1,n,i,i,i,x(i));
     end
-    disp(x);
 end
 
 
