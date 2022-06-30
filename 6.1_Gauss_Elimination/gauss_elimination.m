@@ -1,3 +1,15 @@
+
+A=[1,1,0,3;
+    2,1,-1,1;
+    3,-1,-1,2;
+    -1,2,3,-1];
+B=[4;1;-3;4];
+
+
+[x,Ag] = func_gauss(A,B);
+
+
+
 function [x,Ag] = func_gauss(A,B)
 Ag={};                                                  %Create a cell array to store each matrix
 Aau=[A,B];                                              %Generate the augmented matrix
@@ -42,4 +54,3 @@ else
     end
 end
 end
-

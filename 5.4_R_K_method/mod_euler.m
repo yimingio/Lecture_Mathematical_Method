@@ -1,3 +1,20 @@
+a=0;
+b=2;
+N=10;
+ya=0.5;
+f=@(t,y) y-t^2+1;
+
+
+
+[t,w] = func_mod_euler(a,b,ya,N,f);
+
+
+
+
+
+
+
+
 function [t,w] = func_mod_euler(a,b,ya,N,f)
 h=(b-a)/N;
 t=[];
@@ -16,4 +33,3 @@ for i=1:1:N
 
 end
 end
-
